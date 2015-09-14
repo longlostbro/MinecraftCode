@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.longlostbro</groupId>
+  <artifactId>skyblocks</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>CanarySkyBlocks</name>
+  <description>a minecraft plugin for CanaryMod</description>
+  <dependencies>
+  	<dependency>
+        <groupId>net.canarymod</groupId>
+        <artifactId>CanaryLib</artifactId> <!-- Will always use the latest version found (including snapshots)-->
+    </dependency>
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <scope>runtime</scope>
+      </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+        <id>vi-repo</id>
+        <name>Visual Illusions Repository</name>
+        <url>http://repo.visualillusionsent.net/repository/public/</url>
+    </repository>
+      <repository>
+        <id>Sonatype-public</id>
+        <name>SnakeYAML repository</name>
+        <url>http://oss.sonatype.org/content/groups/public/</url>
+      </repository>
+  </repositories>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.yaml</groupId>
+  			<artifactId>snakeyaml</artifactId>
+  			<version>1.15-SNAPSHOT</version>
+  			<scope>runtime</scope>
+  		</dependency>
+  		<dependency>
+  			<groupId>net.canarymod</groupId>
+  			<artifactId>CanaryLib</artifactId>
+  			<version>[1.0-RC-4-SNAPSHOT,)</version>
+  			<scope>provided</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-shade-plugin</artifactId>
+  			<version>2.3</version>
+  			<configuration>
+          	<!-- put your configurations here -->
+        	</configuration>
+        	<executions>
+          		<execution>
+            		<phase>package</phase>
+            		<goals>
+              			<goal>shade</goal>
+            		</goals>
+          		</execution>
+        	</executions>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>

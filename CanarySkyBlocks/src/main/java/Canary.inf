@@ -1,0 +1,5 @@
+main-class = com.longlostbro.skyblocks.SkyBlocks
+name= SkyBlocks
+author = longlostbro
+version = 1.0
+dependencies=Cuboids
